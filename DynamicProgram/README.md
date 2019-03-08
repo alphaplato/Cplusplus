@@ -1,3 +1,15 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
 # 动态规划
 ## 写在前面的话
    动态规划问题是计算机编程中经常遇到的一类问题，尽管作为标准的算法工程师，比如语音识别、nlp等领域的工程师，并不经常遇到动态规划的问题，但是作为计算机工程师，或者说编程从业者却是一类需要重点关注的问题。至少有一点，在互联网领域内的算法工程师与开发工程师在求职过程中，将会经常与这类问题打交道。
@@ -10,7 +22,6 @@
 ## 1、费布那契数列
    斐波那契数列（意大利语：Successione di Fibonacci），又译为菲波拿契数列、菲波那西数列、斐波那契数列、黄金分割数列。
 在数学上，费波那契数列是以递归的方法来定义：
-   <a href="https://www.codecogs.com/eqnedit.php?latex=F_0&space;=&space;0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_0&space;=&space;0" title="F_0 = 0" /></a>
 {\displaystyle F_{1}=1} F_{1}=1
 {\displaystyle F_{n}=F_{n-1}+F_{n-2}} F_{n}=F_{{n-1}}+F_{{n-2}}（n≧2）
 用文字来说，就是费波那契数列由0和1开始，之后的费波那契系数就是由之前的两数相加而得出。首几个费波那契系数是：

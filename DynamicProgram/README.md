@@ -16,8 +16,10 @@
 ### 1、费布那契数列
 >斐波那契数列（意大利语：Successione di Fibonacci），又译为菲波拿契数列、菲波那西数列、斐波那契数列、黄金分割数列。
 >在数学上，费波那契数列是以递归的方法来定义：
+
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
 >F_{0}=0} F_{0}=0
 >F_{1}=1} F_{1}=1
 >F_{n}=F_{n-1}+F_{n-2}} F_{n}=F_{{n-1}}+F_{{n-2}}（n≧2）

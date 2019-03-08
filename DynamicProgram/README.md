@@ -10,7 +10,7 @@
 ## 1、费布那契数列
    斐波那契数列（意大利语：Successione di Fibonacci），又译为菲波拿契数列、菲波那西数列、斐波那契数列、黄金分割数列。
 在数学上，费波那契数列是以递归的方法来定义：
-   ·F_0 = 0
+   <a href="https://www.codecogs.com/eqnedit.php?latex=F_0&space;=&space;0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_0&space;=&space;0" title="F_0 = 0" /></a>
 {\displaystyle F_{1}=1} F_{1}=1
 {\displaystyle F_{n}=F_{n-1}+F_{n-2}} F_{n}=F_{{n-1}}+F_{{n-2}}（n≧2）
 用文字来说，就是费波那契数列由0和1开始，之后的费波那契系数就是由之前的两数相加而得出。首几个费波那契系数是：

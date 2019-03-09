@@ -17,6 +17,8 @@
 
 > * <img src="https://latex.codecogs.com/gif.latex?F_0&space;=&space;1" title="F_0 = 1" />
 
+>* $\sum_{i=0}^N{X_i}$
+
 > * $F_0=0$
 > * $F_1=1$
 

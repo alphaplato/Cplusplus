@@ -20,8 +20,10 @@
 >* $\sum_{i=0}^N{X_i}$
 
 $\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$
-
+$\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$
 > * $F_0=0$
+
+
 > * $F_1=1$
 
 >F_{0}=0} F_{0}=0

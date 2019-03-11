@@ -59,4 +59,7 @@
 * dp[i][0]=0,当载重为零时；
 * dp[0][j]=0,当j<v[0]，即背包装不进第一个物品时；
 
+#### 无界背包
+
 代码实现见[knapsack.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/knapsack.cc)
+

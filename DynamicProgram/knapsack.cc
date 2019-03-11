@@ -4,10 +4,10 @@ using namespace std;
 int knapsack01(int* w, int* v, int n, int t){
     int dp[n][t];
     int max = 0;
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n; i++){//边界条件1
         dp[i][0] = 0;
     }
-    for(int i=1; i < t; i++){
+    for(int i=1; i < t; i++){//边界条件2
         if(i >= w[0]){
             dp[0][i] = v[0];
             max = v[0];
@@ -15,7 +15,7 @@ int knapsack01(int* w, int* v, int n, int t){
             dp[0][i] = 0;
         }
     }
-    for(int i=1; i<n; i++){
+    for(int i=1; i<n; i++){//状态转移
         for(int j=0; j<=t; j++){
             if(j<w[i]){
                 dp[i][j] = dp[i-1][j];

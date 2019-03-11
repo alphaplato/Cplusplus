@@ -37,3 +37,14 @@
 边界条件：dp[0]=0,dp[1]=1
 
 代码实现见[fibonacci.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/fibonacci.cc)。
+
+### 背包问题
+#### 01背包
+>我们有n种物品，物品j的重量为wj，价格为pj。
+>我们假定所有物品的重量和价格都是非负的。背包所能承受的最大重量为W。
+>如果限定每种物品只能选择0个或1个，则问题称为0-1背包问题。
+
+>可以用公式表示为：
+
+>最大化 \sum _{j=1}^{n}p_{j}x_{j}
+>受限于 \sum _{j=1}^{n}w_{j}x_{j} x_{j} \in {0,1}

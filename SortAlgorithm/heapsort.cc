@@ -60,6 +60,7 @@ void display(int* a, int n){
 int main(){
     int a[] = {4,6,8,5,7};
     heapBiuld(a,5);
+    display(a,5);
     heapDismantle(a,5);
     display(a,5);
 }

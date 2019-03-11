@@ -36,4 +36,4 @@
 转移方程：dp[i]=dp[i-1]+dp[i-2], i>=2
 边界条件：dp[0]=0,dp[1]=1
 
-代码实现见[Fibonacci](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/Fibonacci.cc)。
+代码实现见[fibonacci.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/fibonacci.cc)。

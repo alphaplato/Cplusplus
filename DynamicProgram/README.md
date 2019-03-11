@@ -34,8 +34,8 @@
 解决方案：
 * 目标：求解第n的Fibonacci数列的值；
 * 定义dp[i]：表示第i个数Fibonacci数列的值；
-* 转移方程：dp[i]=dp[i-1]+dp[i-2], i>=2
-* 边界条件：dp[0]=0,dp[1]=1
+* 转移方程：dp[i]=dp[i-1]+dp[i-2], i>=2；
+* 边界条件：dp[0]=0,dp[1]=1。
 
 代码实现见[fibonacci.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/fibonacci.cc)。
 
@@ -56,12 +56,18 @@
 解决方案：
 * 目标：求给定背包载重，求其可容纳最大价值；
 * 定义dp[i][j]：前i个物品中在背包载重j时容纳的最大价值；
-* 转移方程：dp[i][j]=max{dp[i-1][j] 当j<w[j], dp[i-1][j-w[j]]+v[j] 当j>=w[j]}
+* 转移方程：dp[i][j]=max{dp[i-1][j] 当j<w[j], dp[i-1][j-w[j]]+v[j] 当j>=w[j]}；
 * 边界条件：
 1. dp[i][0]=0,当载重为零时；
-2. dp[0][j]=0,当j<v[0]，即背包装不进第一个物品时；
+2. dp[0][j]=0,当j<v[0]，即背包装不进第一个物品时。
 
 #### 无界背包
+>如果不限定每种物品的数量，则问题称为无界背包问题。
+解决方案：
+* 目标：求给定背包载重，求其可容纳最大价值；
+* 定义dp[i][]：在背包载重j时容纳的最大价值；
+* 转移方程：dp[i]=max{dp[i-w[j] 当i>=w[j]时, 0 当i<w[j]}；
+* 边界条件：dp[0]=0。
 
 代码实现见[knapsack.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/knapsack.cc)
 

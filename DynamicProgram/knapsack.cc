@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int knapsack01(int* w, int* v, int n, int t){
+int knapsack01(int* w, int* v, int n, int t){ //01背包
     int dp[n][t];
     int max = 0;
     for(int i=0; i<n; i++){ //边界条件1
@@ -30,7 +30,7 @@ int knapsack01(int* w, int* v, int n, int t){
     return max;
 }
 
-int knapsack(int* w, int* v, int n, int t){
+int knapsack(int* w, int* v, int n, int t){ //无界背包
     int dp[t];
     for(int i=0; i <= t; i++){
         int tmp = 0;

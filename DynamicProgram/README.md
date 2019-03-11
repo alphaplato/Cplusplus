@@ -70,4 +70,3 @@
 * 边界条件：dp[0]=0。
 
 代码实现见[knapsack.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/knapsack.cc)
-

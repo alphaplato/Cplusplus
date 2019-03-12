@@ -119,7 +119,7 @@ ps：一道推荐算法面试题
     * dp[i][0] = 0;
     * dp[0][j] = 0;
 
-从定义可知这里面的dp[i][j]并不代表字符串A前i个字符的子串和字符串B前j个字符的子串的最大公共子串，因此最终结果不是dp[n] [m](假设n，m分别为A，B长度)，而是dp[i][j]的最大值。
+从定义可知这里面的dp[i][j]并不代表字符串A前i个字符的子串和字符串B前j个字符的子串的最大公共子串，因此最终结果不是dp[n]\\[m](假设n，m分别为A，B长度)，而是dp[i][j]的最大值。
 
 代码实现见[lcss.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/lcss.cc)。
 

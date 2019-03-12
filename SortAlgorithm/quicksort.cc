@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void quicksort(int* a, int left, int right){
+void quickSort(int* a, int left, int right){
     if(left >= right){
         return;
     } 
@@ -22,8 +22,8 @@ void quicksort(int* a, int left, int right){
         a[last] = a[first];
     }
     a[first] = key;
-    quicksort(a, left, first-1);
-    quicksort(a, first+1, right);
+    quickSort(a, left, first-1);
+    quickSort(a, first+1, right);
 }
 
 void display(int* a, int n){
@@ -35,6 +35,6 @@ void display(int* a, int n){
 
 int main(){
     int a[] = {9,3,2,4,7,5,4};
-    quicksort(a,0,6);
+    quickSort(a,0,6);
     display(a,7);
 }

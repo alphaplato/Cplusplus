@@ -6,8 +6,11 @@ void quicksort(int* a, int left, int right){
         return;
     } 
     int key = a[left];
+    /*首位left，right不能直接使用，因为（分半）递归
+    时需要使用原始的首位位置。
+    */
     int first = left;
-    int last = right;
+    int last = right; 
     while(first < last){
         while(a[last] >= key && last > first){
             last --;

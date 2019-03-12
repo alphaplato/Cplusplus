@@ -77,8 +77,8 @@
 ###最大公共子串
 >字符串"ABABC"，"BABCA"以及"ABCBA"的最长公共子串是"ABC"。其他的公共子串包括>"A"、"AB"、"B"、"BA"、"BC"以及"C"。
 
->  ABABC
->    |||
->   BABCA
->    |||
->    ABCBA
+> * ABABC
+> *   |||
+> *  BABCA
+> *   |||
+> *   ABCBA

@@ -10,6 +10,8 @@
   
   2、背包问题
 
+  3、最大公共子串
+
 ## 内容
 ### 1、费布那契数列
 >斐波那契数列（意大利语：Successione di Fibonacci），又译为菲波拿契数列、菲波那西数列、斐波那契数列、黄金分割数列。
@@ -69,4 +71,14 @@
 * 转移方程：dp[i]=max{dp[i-w[j] 当i>=w[j]时, 0 当i<w[j]}；
 * 边界条件：dp[0]=0。
 
-代码实现见[knapsack.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/knapsack.cc)
+代码实现见[knapsack.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/knapsack.cc)。
+
+
+###最大公共子串
+>字符串"ABABC"，"BABCA"以及"ABCBA"的最长公共子串是"ABC"。其他的公共子串包括>"A"、"AB"、"B"、"BA"、"BC"以及"C"。
+
+>  ABABC
+>    |||
+>   BABCA
+>    |||
+>    ABCBA

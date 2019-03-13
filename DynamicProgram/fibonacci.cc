@@ -14,6 +14,6 @@ int fibonacci(int n){
 }
 
 int main(){
-    cout << "Fibonacci nth:" << Fibonacci(10) << endl;
+    cout << "Fibonacci nth:" << fibonacci(10) << endl;
     return 0;
 }

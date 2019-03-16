@@ -109,7 +109,7 @@ ps：一道推荐算法面试题
 代码实现见[lcs.cc](https://github.com/alphaplato/Cplusplus/blob/master/DynamicProgram/lcs.cc)。
 
 
-### 4、最长公共子串
+### 4、最长公共子串(Longest Common Substring,LCSS)
 > 在计算机科学中，最长公共子串问题是寻找两个或多个已知字符串最长的子串。此问题与最长公共子序列问题的区别在于子序列不必是连续的，而子串却必须是。
 > 字符串"ABABC"，"BABCA"以及"ABCBA"的最长公共子串是"ABC"。其他的公共子串包括> "A"、"AB"、"B"、"BA"、"BC"以及"C"。
 

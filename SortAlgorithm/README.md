@@ -68,9 +68,9 @@ ps：堆排序的应用
 ![image](https://github.com/alphaplato/Cplusplus/blob/master/image/sortalgorithm-3-1.png)
 
 图示来自Adam Drozdek《c+数据结构与算法》，图示最明显展现出了一下几个特点：
-> 1. 从图片上下结构上看，数据的数量为对称结构。
+> 1. 从图示结构上看，数据的数量呈上下对称结构。
 > 2. 从数据次序变化上看，上半结构不断二分法拆分数据，数据次序不变；下半部分不断合并数据，合并的时候将数据顺序排列数据。
 
-因此在递归方法的代码实现上其实也遵循了以上两两条，将代码的递归用分拆（<）、合并(>)两步，并组合嵌套形成递归；而递归的展开即为<<<...>>>的逻辑结构。
+因此在递归方法的代码实现上其实也遵循了以上两条，将代码的递归用分拆（<）、合并(>)两步，并组合嵌套形成递归；而递归的展开即为<<<...>>>的逻辑结构。
 
 代码实现见[mergesort.cc](https://github.com/alphaplato/Cplusplus/blob/master/SortAlgorithm/mergesort.cc)。

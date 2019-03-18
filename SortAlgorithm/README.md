@@ -67,7 +67,7 @@ ps：堆排序的应用
 如下图：
 ![image](https://github.com/alphaplato/Cplusplus/blob/master/image/sortalgorithm-3-1.png)
 
-图片来自Adam Drozdek《c+数据结构与算法》，图片最明显展现出了一下几个特点：
+图示来自Adam Drozdek《c+数据结构与算法》，图示最明显展现出了一下几个特点：
 > 1. 从图片上下结构上看，数据的数量为对称结构。
 > 2. 从数据次序变化上看，上半结构不断二分法拆分数据，数据次序不变；下半部分不断合并数据，合并的时候将数据顺序排列数据。
 

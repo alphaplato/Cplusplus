@@ -55,3 +55,22 @@ ps：堆排序的应用
 * 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。
 
 代码实现见[quicksort.cc](https://github.com/alphaplato/Cplusplus/blob/master/SortAlgorithm/quicksort.cc)。
+
+### 3、归并排序
+>归并排序（英语：Merge sort，或mergesort），是创建在归并操作上的一种有效的排序算法，效率为O(nlogn)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。
+>，归并算法的核心是归并操作（merge），指的是将两个已经排序的序列合并成一个序列的操作。
+
+值得注意的是：
+* 归并排序采用了分治思想，也可以说是分治最基础的表现算法。
+* 归并操作的含义，理解归并二字的含义，自然知道算法怎么实现。
+
+如下图：
+![image](https://github.com/alphaplato/Cplusplus/blob/master/image/sortalgorithm-3-1.png)
+
+图片来自Adam Drozdek《c+数据结构与算法》，图片最明显展现出了一下几个特点：
+> 1. 从图片上下结构上看，数据的数量为对称结构。
+> 2. 从数据次序变化上看，上半结构不断二分法拆分数据，数据次序不变；下半部分不断合并数据，合并的时候将数据顺序排列数据。
+
+因此在递归方法的代码实现上其实也遵循了以上两两条，将代码的递归用分拆（<）、合并(>)两步，并组合嵌套形成递归；而递归的展开即为<<<...>>>的逻辑结构。
+
+代码实现见[mergesort.cc](https://github.com/alphaplato/Cplusplus/blob/master/SortAlgorithm/mergesort.cc)。

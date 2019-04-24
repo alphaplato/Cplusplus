@@ -22,7 +22,7 @@ void display(IntLtnode* head){ //链表的输出
     std::cout << std::endl;
 }
 
-void Init(int* a, int size, IntLtnode* &head) { //链表的初始化
+void init(int* a, int size, IntLtnode* &head) { //链表的初始化
     if (size == 0) {
         std::cout << "No data initlize!" << std::endl;
         return;
@@ -81,7 +81,7 @@ int main(){
     int a[] = {1,2,3,4,5};
     IntLtnode* intlt;
     std::cout << "initlize the list:";
-    Init(a, 5, intlt);
+    init(a, 5, intlt);
     display(intlt);
 
     std::cout << "reverse the list:";

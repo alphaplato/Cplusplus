@@ -177,16 +177,16 @@ int main(){
     PreTravel(head);
     std::cout << std::endl << "前序遍历，非递归:";
     PreTravel2(head);
-    std::cout << std::endl << "List:";
+    std::cout << std::endl << "将树变成一条直链:";
     ListTree(head);
     PreTravel(head);
     TreeNode* des;
     std::cout << std::endl << "查找" << 7 << ":";
     std::cout << std::endl << "是否查找到，1 或 0：" 
         << FindTreeNode(7,head,des) << std::endl;
-    std::cout << std::endl << "删除" << 7 << ":";
-    //DelTreeNode(des);
-    //std::cout << "mid travel:";
+    std::cout << "删除" << 7 << ":";
+    DelTreeNode(des);
+    std::cout << "mid travel:";
     MidTravel(head);
     std::cout << std::endl;
     return 0;

@@ -98,18 +98,18 @@ int PreTravel2(TreeNode* t){
 }
 
 
-int ListTree(TreeNode* &bitree){
-    if(!bitree){
+int ListTree(TreeNode* &head){
+    if(!head){
         return 0;
     }
-    if(bitree->left){
-        TreeNode* node = bitree->left;
-        bitree->left = node->right;
-        node->right = bitree;
-        bitree = node;
-        ListTree(bitree);    
-    }else if(bitree->right){
-        ListTree(bitree->right);
+    if(head->left){
+        TreeNode* node = head->left;
+        head->left = node->right;
+        node->right = head;
+        head = node;
+        ListTree(head);    
+    }else if(head->right){
+        ListTree(head->right);
     }
     return 0;
 }
@@ -165,29 +165,29 @@ bool isAVL(TreeNode *pRoot, int &height)
 
 int main(){
     int a[7] = {6,3,5,2,4,9,7};
-    TreeNode* bitree = NULL;
+    TreeNode* head = NULL;
     for(int i=0;i < 7;i++){
-        CreateBST(a[i],bitree);
+        CreateBST(a[i],head);
     }
     std::cout << "中序遍历：";
-    MidTravel(bitree);
+    MidTravel(head);
     std::cout << std::endl << "广度优先遍历";
-    WidthTravel(bitree);
+    WidthTravel(head);
     std::cout << std::endl << "前序遍历，递归:";
-    PreTravel(bitree);
+    PreTravel(head);
     std::cout << std::endl << "前序遍历，非递归:";
-    PreTravel2(bitree);
+    PreTravel2(head);
     std::cout << std::endl << "List:";
-    ListTree(bitree);
-    PreTravel(bitree);
+    ListTree(head);
+    PreTravel(head);
     TreeNode* des;
     std::cout << std::endl << "查找" << 7 << ":";
     std::cout << std::endl << "是否查找到，1 或 0：" 
-        << FindTreeNode(7,bitree,des) << std::endl;
+        << FindTreeNode(7,head,des) << std::endl;
     std::cout << std::endl << "删除" << 7 << ":";
     //DelTreeNode(des);
     //std::cout << "mid travel:";
-    MidTravel(bitree);
+    MidTravel(head);
     std::cout << std::endl;
     return 0;
 }

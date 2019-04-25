@@ -51,7 +51,7 @@ int widthTravel(TreeNode *&t) {
     return 0;
 }
 
-int midTravel(TreeNode *&t) {
+int midTravel(TreeNode *t) { // 递归实现
     if (t) {
         midTravel(t->left);
         std::cout << t->key << " ";
@@ -60,6 +60,9 @@ int midTravel(TreeNode *&t) {
         return 0;
     }
     return 0;
+}
+
+int midTravel2(TreeNode *t) { //非递归
 }
 
 int preTravel(TreeNode *t) {

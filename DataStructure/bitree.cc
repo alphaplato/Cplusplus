@@ -29,8 +29,29 @@ void CreateBST(int a, TreeNode *&t)
     }
 }
 
-int midTravel(TreeNode *&t)
-{
+int widthTravel(TreeNode *&t) {
+    std::queue<TreeNode *> nodes;
+    if (!t) {
+        return 1;
+    }
+    if (nodes.empty()) {
+        nodes.push(t);
+    }
+    while (!nodes.empty()) {
+        TreeNode *p = nodes.front();
+        std::cout << p->key << " ";
+        if (p->left) {
+            nodes.push(p->left);
+        }
+        if (p->right) {
+            nodes.push(p->right);
+        }
+        nodes.pop();
+    }
+    return 0;
+}
+
+int midTravel(TreeNode *&t) {
     if (t) {
         midTravel(t->left);
         std::cout << t->key << " ";
@@ -41,38 +62,8 @@ int midTravel(TreeNode *&t)
     return 0;
 }
 
-int widthTravel(TreeNode *&t)
-{
-    std::queue<TreeNode *> nodes;
-    if (!t)
-    {
-        return 1;
-    }
-    if (nodes.empty())
-    {
-        nodes.push(t);
-    }
-    while (!nodes.empty())
-    {
-        TreeNode *p = nodes.front();
-        std::cout << p->key << " ";
-        if (p->left)
-        {
-            nodes.push(p->left);
-        }
-        if (p->right)
-        {
-            nodes.push(p->right);
-        }
-        nodes.pop();
-    }
-    return 0;
-}
-
-int preTravel(TreeNode *t)
-{
-    if (t)
-    {
+int preTravel(TreeNode *t) {
+    if (t) {
         std::cout << t->key << " ";
         preTravel(t->left);
         preTravel(t->right);
@@ -80,24 +71,19 @@ int preTravel(TreeNode *t)
     return 0;
 };
 
-int preTravel2(TreeNode *t)
-{
+int preTravel2(TreeNode *t) {
     std::stack<TreeNode *> s;
-    if (t)
-    {
+    if (t) {
         s.push(t);
     }
-    while (!s.empty())
-    {
+    while (!s.empty()) {
         TreeNode *p = s.top();
         std::cout << p->key << " ";
         s.pop();
-        if (p->right)
-        {
+        if (p->right) {
             s.push(p->right);
         }
-        if (p->left)
-        {
+        if (p->left) {
             s.push(p->left);
         }
     }
@@ -106,20 +92,17 @@ int preTravel2(TreeNode *t)
 
 int listTree(TreeNode *&head)
 {
-    if (!head)
-    {
+    if (!head) {
         return 0;
     }
-    if (head->left)
-    {
+    if (head->left) {
         TreeNode *node = head->left;
         head->left = node->right;
         node->right = head;
         head = node;
         listTree(head);
     }
-    else if (head->right)
-    {
+    else if (head->right) {
         listTree(head->right);
     }
     return 0;
@@ -127,18 +110,12 @@ int listTree(TreeNode *&head)
 
 int findTreeNode(int a, TreeNode *&head, TreeNode *&node)
 {
-    if (head)
-    {
-        if (head->key > a)
-        {
+    if (head) {
+        if (head->key > a) {
             findTreeNode(a, head->left, node);
-        }
-        else if (head->key < a)
-        {
+        } else if (head->key < a) {
             findTreeNode(a, head->right, node);
-        }
-        else
-        {
+        } else {
             node = head;
             return 1;
         }
@@ -148,16 +125,11 @@ int findTreeNode(int a, TreeNode *&head, TreeNode *&node)
 
 int delTreeNode(TreeNode *t)
 {
-    if (t->left == NULL && t->right == NULL)
-    {
+    if (t->left == NULL && t->right == NULL) {
         *t = NULL;
-    }
-    else if (t->left)
-    {
+    } else if (t->left) {
         *t = *(t->left);
-    }
-    else if (t->right)
-    {
+    } else if (t->right) {
         *t = *(t->right);
     }
     return 0;
@@ -165,8 +137,7 @@ int delTreeNode(TreeNode *t)
 
 bool isAVL(TreeNode *pRoot, int &height)
 {
-    if (pRoot == NULL)
-    {
+    if (pRoot == NULL) {
         height = 0;
         return true;
     }
@@ -178,8 +149,7 @@ bool isAVL(TreeNode *pRoot, int &height)
     int heightRight;
     bool resultRight = isAVL(pRoot->right, heightRight);
     // 左右子树都为AVL，判断根节点的平衡性
-    if (resultLeft && resultRight && abs(heightLeft - heightRight) < 2)
-    {
+    if (resultLeft && resultRight && abs(heightLeft - heightRight) < 2) {
         height = (heightLeft > heightRight) ? (heightLeft + 1) : (heightRight + 1);
         return true;
     }
@@ -190,8 +160,7 @@ int main()
 {
     int a[7] = {6, 3, 5, 2, 4, 9, 7};
     TreeNode *head = NULL;
-    for (int i = 0; i < 7; i++)
-    {
+    for (int i = 0; i < 7; i++) {
         CreateBST(a[i], head);
     }
     std::cout << "中序遍历：";

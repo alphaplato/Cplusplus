@@ -31,14 +31,11 @@ void CreateBST(int a, TreeNode *&t)
 
 int midTravel(TreeNode *&t)
 {
-    if (t)
-    {
+    if (t) {
         midTravel(t->left);
         std::cout << t->key << " ";
         midTravel(t->right);
-    }
-    else
-    {
+    } else {
         return 0;
     }
     return 0;

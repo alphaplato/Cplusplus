@@ -98,20 +98,13 @@ int MidTravel(TreeNode* &t){
 
 int MidTravel2(TreeNode* &t){
     std::stack<TreeNode*> s;
-    if (t) {
-        s.push(t);
-    }
-    TreeNode* p = t->left;
+    TreeNode* p = t;
     while(!s.empty() || p) {
-        if (p) {
-            if (p->left) {
-                s.push(p);
-                p = p->left;
-            } else {
-                std::cout << p->data << " ";
-                p = p->right;
-            }
-        } else {
+        while (p) {
+            s.push(p);
+            p = p->left;
+        }
+        if (!s.empty()) {
             p = s.top();
             std::cout << p->data << " ";
             s.pop();

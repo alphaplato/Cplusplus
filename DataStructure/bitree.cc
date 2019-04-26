@@ -54,32 +54,17 @@ int PreTravel(TreeNode* t) {
 
 int PreTravel2(TreeNode* t) {
     std::stack<TreeNode*> s;
-    if(t) {
-        s.push(t);
-        std::cout << t->data << " ";
-    }
-    TreeNode* p = t;
-    while(1) {
+    TreeNode* p;
+    s.push(t);
+    while(!s.empty()) {
+        p = s.top();
+        std::cout << p->data << " ";
+        s.pop();
+        if (p->right) {
+            s.push(p->right);
+        }
         if (p->left) {
-            p = p->left;
-            std::cout << p->data << " ";
-            s.push(p);
-        } else {
-            if (p->right) {
-                s.pop();
-                p = p->right;
-                std::cout << p->data << " ";
-                s.push(p);
-            } else {
-                s.pop();
-                if (s.empty()) {
-                    break;
-                } else {
-                    p = (s.top())->right;
-                    std::cout << p->data << " ";
-                    s.pop();
-                }
-            }
+            s.push(p->left);
         }
     }
     return 0;

@@ -9,19 +9,19 @@ struct TreeNode {
     int data;
 };
 
-void CreateBST(int a,TreeNode* &t) {
+void createBST(int a,TreeNode* &t) {
     if (t) {
         if (t->data > a) {
-            CreateBST(a,t->left);
+            createBST(a,t->left);
         } else {
-            CreateBST(a,t->right);
+            createBST(a,t->right);
         }
     } else {
         t = new TreeNode(a);
     }
 }
 
-int WidthTravel(TreeNode* &t) {
+int widthTravel(TreeNode* &t) {
     std::queue<TreeNode*> nodes;
     if(!t) {
         return 1;
@@ -43,18 +43,21 @@ int WidthTravel(TreeNode* &t) {
     return 0;
 }
 
-int PreTravel(TreeNode* t) {
+int preTravel(TreeNode* &t) {
     if (t) {
         std::cout << t->data << " ";
-        PreTravel(t->left);
-        PreTravel(t->right);
+        preTravel(t->left);
+        preTravel(t->right);
     }
     return 0;
 };
 
-int PreTravel2(TreeNode* t) {
+int preTravel2(TreeNode* &t) {
     std::stack<TreeNode*> s;
     TreeNode* p;
+    if(!t){
+        return 0;
+    }
     s.push(t);
     while(!s.empty()) {
         p = s.top();
@@ -70,18 +73,18 @@ int PreTravel2(TreeNode* t) {
     return 0;
 }
 
-int MidTravel(TreeNode* &t){
+int midTravel(TreeNode* &t){
     if(t) {
-        MidTravel(t->left);
+        midTravel(t->left);
         std::cout << t->data << " ";
-        MidTravel(t->right);
+        midTravel(t->right);
     } else {
         return 0;
     }
     return 0;
 }
 
-int MidTravel2(TreeNode* &t){
+int midTravel2(TreeNode* &t){
     std::stack<TreeNode*> s;
     TreeNode* p = t;
     while(!s.empty() || p) {
@@ -99,7 +102,45 @@ int MidTravel2(TreeNode* &t){
     return 0;
 }
 
-int ListTree(TreeNode* &head) {
+int postTravel(TreeNode* &t) {
+    if (t) {
+        postTravel(t->left);
+        postTravel(t->right);
+        std::cout << t->data << " ";
+    }
+    return 0;
+}
+
+int postTravel2(TreeNode* &t) {
+    if (!t) {
+        std::cout << "No data!" << std::endl;
+        return 0;
+    }
+    std::stack<TreeNode*> s;
+    s.push(t);
+    TreeNode* p = t->left;
+    TreeNode* temp = t;
+    while(!s.empty()) {
+        while(p && p != temp) {
+            s.push(p);
+            p = p->left;
+        }
+        p = s.top();
+        if (p->right && p->right != temp) {
+            p = p->right;
+        } else {
+            std::cout << p->data << " ";
+            temp = p;
+            s.pop();
+            if (!s.empty()) {
+                p = s.top()->right;
+            }   
+        } 
+    }
+    return 0;    
+}
+
+int listTree(TreeNode* &head) {
     if (!head) {
         return 0;
     }
@@ -108,19 +149,19 @@ int ListTree(TreeNode* &head) {
         head->left = node->right;
         node->right = head;
         head = node;
-        ListTree(head);    
+        listTree(head);    
     } else if (head->right) {
-        ListTree(head->right);
+        listTree(head->right);
     }
     return 0;
 }
 
-int FindTreeNode(int a,TreeNode* &head, TreeNode* &node) {
+int findTreeNode(int a,TreeNode* &head, TreeNode* &node) {
     if (head) {
         if(head->data > a) {
-            FindTreeNode(a, head->left, node);
+            findTreeNode(a, head->left, node);
         } else if (head->data < a) {
-            FindTreeNode(a, head->right, node);
+            findTreeNode(a, head->right, node);
         } else {
             node = head;
             return 1;
@@ -129,7 +170,7 @@ int FindTreeNode(int a,TreeNode* &head, TreeNode* &node) {
     return 0;
 }
 
-int DelTreeNode(TreeNode* t) {
+int delTreeNode(TreeNode* t) {
     if (t->left == NULL && t->right == NULL) {
         *t = NULL;
     } else if (t->left) {
@@ -166,29 +207,33 @@ int main() {
     int a[7] = {6,3,5,2,4,9,7};
     TreeNode* head = NULL;
     for(int i=0;i < 7;i++) {
-        CreateBST(a[i],head);
+        createBST(a[i],head);
     }
     std::cout << "广度优先遍历";
-    WidthTravel(head);
+    widthTravel(head);
     std::cout << std::endl << "前序遍历，递归：";
-    PreTravel(head);
+    preTravel(head);
     std::cout << std::endl << "前序遍历，非递归：";
-    PreTravel2(head);
+    preTravel2(head);
     std::cout << std::endl << "中序遍历，递归：";
-    MidTravel(head);
+    midTravel(head);
     std::cout << std::endl << "中序遍历，非递归：";
-    MidTravel2(head);
+    midTravel2(head);
+    std::cout << std::endl << "后序遍历，递归：";
+    postTravel(head);
+    std::cout << std::endl << "后序遍历，非递归：";
+    postTravel2(head);
     std::cout << std::endl << "将树变成一条直链：";
-    ListTree(head);
-    PreTravel(head);
+    listTree(head);
+    preTravel(head);
     TreeNode* des;
     std::cout << std::endl << "查找" << 7 << "：";
     std::cout << std::endl << "是否查找到，1 或 0：" 
-        << FindTreeNode(7,head,des) << std::endl;
+        << findTreeNode(7,head,des) << std::endl;
     std::cout << "删除" << 7 << "：";
-    DelTreeNode(des);
+    delTreeNode(des);
     std::cout << "mid travel：";
-    MidTravel(head);
+    midTravel(head);
     std::cout << std::endl;
     return 0;
 }

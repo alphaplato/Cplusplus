@@ -209,7 +209,7 @@ int main() {
     for(int i=0;i < 7;i++) {
         createBST(a[i],head);
     }
-    std::cout << "广度优先遍历";
+    std::cout << "广度优先遍历：";
     widthTravel(head);
     std::cout << std::endl << "前序遍历，递归：";
     preTravel(head);

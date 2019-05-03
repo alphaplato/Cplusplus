@@ -227,8 +227,7 @@ int main() {
     listTree(head);
     preTravel(head);
     TreeNode* des;
-    std::cout << std::endl << "查找" << 7 << "：";
-    std::cout << std::endl << "是否查找到，1 或 0：" 
+    std::cout << std::endl << "查找" << "7,是否查找到，1 或 0："
         << findTreeNode(7,head,des) << std::endl;
     std::cout << "删除" << 7 << "：";
     delTreeNode(des);
